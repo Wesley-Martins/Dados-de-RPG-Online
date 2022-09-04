@@ -4,64 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
     <title>Dados RPG Online</title>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="images/tipo-de-dado/dado-de-20-logo.png" alt="dado-de-20-lados">
-            <h1>Dados RPG Online</h1>
+            <img src="images/tipo-de-dado/dado-de-20-logo.png" alt="dado-de-20-lados" id="dice-logo">
+            <h1 id="name-logo">Dados RPG Online</h1>
         </div>
         <div class="theme">
-            <p>Tema: &#127779; &#9789;</p>
+            <p>Tema: &#127779; | &#9789;</p>
         </div>
     </header>
     <main>
-        <section class="colors-chose">
-            <h2>Cor dos dados:</h2>
-            <form class="dice-colors">
-                <label for="azul">&#128998;</label>
-                <input type="radio" name="color" id="azul">
-                <label for="vermelho">&#128997;</label>
-                <input type="radio" name="color" id="vermelho">
-                <label for="verde">&#129001;</label>
-                <input type="radio" name="color" id="verde">
-            </form>
-        </section>
         <section class="options">
-            <div class="dice-number">
-                <p>Número de dados:</p>
-                <select>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
+            <div id="dice-options-container">
+                <div class="dice-number">
+                    <p class="options-text">Número de dados</p>
+                    <select class="dice-selections">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div class="number-of-sides">
+                    <p class="options-text">Número de lados</p>
+                    <select class="dice-selections">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
             </div>
-            <div class="number-of-sides">
-                <p>Número de lados:</p>
-                <select>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="12">12</option>
-                    <option value="20">20</option>
-                </select>
+            <div class="colors-chose">
+                <h2>Cor dos dados:</h2>
+                <form id="dice-colors">
+                    <label for="azul">&#128998;</label>
+                    <input type="radio" name="color" id="azul">
+                    <label for="vermelho">&#128997;</label>
+                    <input type="radio" name="color" id="vermelho">
+                    <label for="verde">&#129001;</label>
+                    <input type="radio" name="color" id="verde">
+                </form>
             </div>
-            <div class="dices">
+        </section>
+        <section id="results-container">
+            <div class="results">
                 <div class="dice">
                     <img src="images/tipo-de-dado/dado-de-20.png" alt="dado">
-                    <p>1</p>
+                    <p id="final-result">1</p>
                 </div>
-                <button id="dice-throw">Lançar</button>
+                <div id="dice-throw">
+                    <button>Lançar</button>
+                </div>
             </div>
         </section>
     </main>  
