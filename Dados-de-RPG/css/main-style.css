@@ -63,26 +63,15 @@ header {
 .options-text {
     display: inline-block;
     padding: 0 0.5em;
+    margin: 1rem;
     font-size: 1.75rem
 }
+
 
 .dice-selections {
     text-align: center;
     padding: 5px 15px;
     font-size: 1em;
-}
-
-.colors-chose {
-    display: inline-block;
-    position: absolute;
-    width: 20Vw;
-    right: 5%;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.colors-chose h2 {
-    margin: 0;
 }
 
 #results-container {
@@ -111,10 +100,10 @@ header {
 
 #final-result {
     position: absolute;
-    bottom: 42%;
-    margin: 0 40%;
+    bottom: 45%;
+    margin: 0 35% 0 38%;
     font-family: 'Segoe UI';
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: beige;
 }
 
@@ -125,7 +114,7 @@ header {
     border-radius: 2.5px;
 }
 
-#dice-throw button {
+#Lançar {
     width: 50%;
     padding: 5px 0;
 }

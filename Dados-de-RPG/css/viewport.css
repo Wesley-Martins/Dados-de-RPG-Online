@@ -7,25 +7,23 @@
         display: block;
     }
 
-    .colors-chose {
-        display: inline-block;
-        left: 5%;
-
-    }
-
-    #dice-colors label{
-        display: block;
+    .dice-selections {
+        width: 100px;
+        font-size: 1.3rem;
     }
 
     .results {
         width: 35%;
     }
-
 }
 
 @media (max-width : 600px) {
     .results {
         width: 60%;
+    }
+
+    .options p{
+        font-size: 35px;
     }
 }
 
@@ -34,7 +32,11 @@
         font-size: small
     }
 
-    .colors-chose {
-        left: 0;
+    .options p{
+        font-size: 25px;
+    }
+
+    .dice-selections {
+        font-size: 1rem;
     }
 }
