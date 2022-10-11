@@ -24,7 +24,7 @@ function generateResult () {
     const selectedDice = diceSelect.options[diceSelect.selectedIndex].value;
 
     for(let i = 0; i < diceImage.length; i++) {
-        diceImage[i].setAttribute("src", `images/tipo-de-dado/d${selectedDice}.png`);
+        diceImage[i].setAttribute("src", `/Components/images/tipo-de-dado/d${selectedDice}.png`);
         diceResult[i].textContent = RandomInteger(1, selectedDice);
     }
     
