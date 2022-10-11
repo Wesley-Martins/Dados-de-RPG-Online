@@ -1,53 +1,82 @@
-const finalResult = document.querySelector("#final-result");
-const lançar = document.querySelector("#Lançar");
-
 function RandomInteger (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function themeChanger () {
-    const themes = document.querySelectorAll(".theme-icon");
+    const theme = document.querySelector(".theme-icon");
     const background = document.querySelector("body");
-    const options = document.querySelectorAll(".options-text");
 
-
-
-    for(let index = 0; index < themes.length; index++) {
-       const theme = themes[index];
-
-        theme.onclick = () => {
-            background.style.backgroundColor = theme.value;
-        }
-    }
-    if (background.style.backgroundColor == "#202020") {
-        options[0].textContent = "white";
+    theme.onclick = () => {
+        background.classList.toggle("dark");
     }
 }
 
-const dices = document.querySelectorAll('[data-side]');
-
-function diceChanger () {
-    for (let index = 0; index < dices.length; index++) {
-        const dice = dices[index];
-        const diceValue = dice.getAttribute('data-side');
-        const THEdice = document.querySelector(".THEdice");
-
-        dice.onclick = () => {
-            THEdice.setAttribute('src',  `images/tipo-de-dado/d${diceValue}.png`);
-            finalResult.textContent = RandomInteger(1, diceValue);
-        }
+function shakeDice () {
+    for (let i = 0; i < diceAndNumber.length; i++) {
+        diceAndNumber[i].classList.remove('shake'); // reset animation
+        void diceAndNumber[i].offsetWidth; // trigger reflow
+        diceAndNumber[i].classList.add('shake'); // start animation
     }
 }
 
+function generateResult () {
+    const diceResult = document.querySelectorAll(".dice-result");
+    const selectedDice = diceSelect.options[diceSelect.selectedIndex].value;
+
+    for(let i = 0; i < diceImage.length; i++) {
+        diceImage[i].setAttribute("src", `images/tipo-de-dado/d${selectedDice}.png`);
+        diceResult[i].textContent = RandomInteger(1, selectedDice);
+    }
+    
+    shakeDice()
+}
+
+function addDice (val, newVal) {
+    if (newVal < val) {
+        for (let i = newVal; i < val; i++) {
+            diceAndNumber[i].classList.add("hidden")
+        }
+    }
+    else {
+        for (let i = 0; i < val + 1; i++) {
+            diceAndNumber[i].classList.remove("hidden")
+        }
+    }
+    generateResult()
+}
+ 
+// constants
+const diceAndNumber = document.querySelectorAll(".dice");
+const diceImage = document.querySelectorAll(".diceImage");
 const diceSelect = document.querySelector("#NumberOfSides");
+const addSelect = document.querySelector("#NumberOfDices");
+const lançar = document.querySelector("#lançar");
 
-diceSelect.onclick = () => {
-    const selectedOption = diceSelect.options[diceSelect.selectedIndex].getAttribute('data-side');
+var selectedNumber = addSelect.selectedIndex;
 
-    lançar.onclick =  () => {
-        finalResult.textContent = RandomInteger(1, selectedOption)
-    }
+lançar.onclick = () => {
+    generateResult()
 }
 
-diceChanger()
+// update the select value
+diceSelect.addEventListener("change", () => {
+    generateResult();
+
+    lançar.onclick = () => {
+        generateResult()
+    }
+})
+
+addSelect.addEventListener("change", () => {
+    var selectedNumber = addSelect.selectedIndex;
+    addDice(selectedNumber);
+
+    addSelect.addEventListener("change", () => {
+        var newValue = addSelect.selectedIndex;
+        addDice(selectedNumber, newValue)
+    })
+})
+
+// startup functions
 themeChanger()
+generateResult()

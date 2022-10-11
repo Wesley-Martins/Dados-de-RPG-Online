@@ -42,14 +42,9 @@ header {
     bottom: 2%;
 }
 
-.light-or-dark p {
-    display: inline-block;
-    margin: 0;
-    font-size: 1.35em;
-}
-
 .theme-icon {
     font-size: 1rem;
+    width: 1.5rem;
 }
 
 .options {
@@ -76,36 +71,48 @@ header {
     font-size: 1em;
 }
 
-#results-container {
-    width: 100Vw;
-}
-
 .results {
     background-color: #2797c7;
     width: 25%;
-    padding: 0.5rem 2rem;
-    margin: auto;
+    padding: 0.5em 0.5em;    
+    margin: 0 auto;
     border: 1.5px solid black;
     top: 25%;
     text-align: center;
 }
 
-.dice {
+.dices {
+    display: block;
     position: relative;
-    width: 80%;
-    margin: auto;
+    width: 100%;
+    margin: 0;
 }
 
-.dice img {
-    width: 80%;
+.dice {
+    display: inline-block;
+    position: relative;
+    width: 45%;
+    margin: 0;
+    text-align: center;
 }
 
-#final-result {
+.hidden {
+    display: none;
+}
+
+.diceImage {
+    display: inline-block;
+    width: 125px;
+    height: 125px;
+}
+
+.dice-result {
     position: absolute;
-    bottom: 45%;
-    margin: 0 35% 0 38%;
+    top: 20%;
+    left: 40%;
+    margin: 0;
     font-family: 'Segoe UI';
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: white;
 }
 
@@ -116,7 +123,42 @@ header {
     border-radius: 2.5px;
 }
 
-#Lançar {
+#lançar {
     width: 50%;
     padding: 5px 0;
+    border-radius: 4px;
+}
+
+#lançar:active {
+    width: 48%;
+    background-color: yellow;
+}
+
+/*for javascript*/
+
+.dark {
+    background-color: #202020;
+    color: white;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateY(0%)
+    }
+    25% {
+        transform: translateY(-5px)
+    }
+    50% {
+        transform: translateY(5px)
+    }
+    75% {
+        transform: translateY(-5px)
+    }
+    100% {
+        transform: translateY(0%)
+    }
+  }
+
+.shake {
+    animation: shake 0.5s;
 }

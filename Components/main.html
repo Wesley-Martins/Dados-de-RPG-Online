@@ -18,8 +18,7 @@
             <h1 id="name-logo">Dados RPG Online</h1>
         </div>
         <div class="light-or-dark">
-            <button class="theme-icon" value="white">&#127779;</button>
-            <button class="theme-icon" value="#202020">&#9789;</button>   
+            <button class="theme-icon">&#9789;</button>   
         </div>
     </header>
     <main>
@@ -28,38 +27,58 @@
                 <div class="dice-number">
                     <p class="options-text">Número de dados</p>
                     <select class="dice-selections" id="NumberOfDices">
-                        <option data-diceNumber="1">1</option>
-                        <option data-diceNumber="2">2</option>
-                        <option data-diceNumber="3">3</option>
-                        <option data-diceNumber="4">4</option>
-                        <option data-diceNumber="5">5</option>
-                        <option data-diceNumber="6">6</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
                     </select>
                 </div>
                 <div class="number-of-sides">
                     <p class="options-text">Número de lados</p>
                     <select class="dice-selections" id="NumberOfSides">
-                        <option value="4" data-side="4">4</option>
-                        <option value="6" data-side="6">6</option>
-                        <option value="8" data-side="8">8</option>
-                        <option value="10" data-side="10">10</option>
-                        <option value="12" data-side="12">12</option>
-                        <option value="20" data-side="20">20</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="20">20</option>
                     </select>
                 </div>
             </div>
         </section>
-        <section id="results-container">
-            <div class="results">
+        <div class="results">
+            <div class="dices">
                 <div class="dice">
-                    <img class="THEdice" src="images/tipo-de-dado/d20.png" alt="dado">
-                    <p id="final-result" value="">1</p>
+                    <img class="diceImage" src="images/tipo-de-dado/d20.png" alt="dado">
+                    <p class="dice-result">1</p>
                 </div>
-                <div id="dice-throw">
-                    <button id="Lançar">Lançar</button>
+                <div class="dice hidden">
+                    <img class="diceImage" src="images/tipo-de-dado/d20.png" alt="dado">
+                    <p class="dice-result">1</p>
+                </div>                
+                <div class="dice hidden">
+                    <img class="diceImage" src="images/tipo-de-dado/d20.png" alt="dado">
+                    <p class="dice-result">1</p>
+                </div>                
+                <div class="dice hidden">
+                    <img class="diceImage" src="images/tipo-de-dado/d20.png" alt="dado">
+                    <p class="dice-result">1</p>
+                </div>                
+                <div class="dice hidden">
+                    <img class="diceImage" src="images/tipo-de-dado/d20.png" alt="dado">
+                    <p class="dice-result">1</p>
+                </div>                
+                <div class="dice hidden">
+                    <img class="diceImage" src="images/tipo-de-dado/d20.png" alt="dado">
+                    <p class="dice-result">1</p>
                 </div>
             </div>
-        </section>
+            <div id="dice-throw">
+                <button id="lançar">Lançar</button>
+            </div>
+        </div>
     </main>
     <script src="javascript/main.js"></script>  
 </body>
