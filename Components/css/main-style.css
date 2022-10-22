@@ -76,7 +76,8 @@ header {
     width: 25%;
     padding: 0.5em 0.5em;    
     margin: 0 auto;
-    border: 1.5px solid black;
+    border: 2px solid black;
+    border-radius: 1.8px;
     top: 25%;
     text-align: center;
 }
